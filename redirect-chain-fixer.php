@@ -3,7 +3,7 @@
  * Plugin Name:       Redirect Chain Fixer
  * Plugin URI:        https://www.contentpowered.com
  * Description:       Finds links in your posts and pages that pass through redirects and points them straight at the final URL. Internal links are fixed automatically; external ones wait for your approval.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 5.8
  * Requires PHP:      7.2
  * Author:            Content Powered
