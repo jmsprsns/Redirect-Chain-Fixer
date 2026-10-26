@@ -86,6 +86,7 @@ final class Redirect_Chain_Fixer_Admin {
 		$this->plugin = $plugin;
 
 		Redirect_Chain_Fixer_Menu::init();
+		Redirect_Chain_Fixer_Feedback::init();
 
 		add_action( 'admin_menu', array( $this, 'register_menu' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );

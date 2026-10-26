@@ -101,6 +101,7 @@ includes/
   class-redirect-chain-fixer-admin.php           Content Powered > Redirect Chain Fixer page, settings, actions, AJAX
   class-redirect-chain-fixer-list-table.php      Needs review, Fixed and Ignored lists
   class-redirect-chain-fixer-menu.php            Shared top-level "Content Powered" menu
+  class-redirect-chain-fixer-feedback.php        Shared Submit Feedback and Report a Bug pages
   class-redirect-chain-fixer-updater.php         GitHub update checks (PUC wiring)
   class-redirect-chain-fixer-icons.php           Inline Lucide icon helper
 assets/
@@ -116,6 +117,18 @@ plugin-update-checker/                           Plugin Update Checker 5.7 libra
 Every Content Powered plugin puts its page under one shared top-level **Content Powered** menu, so several installed plugins line up as Content Powered > Redirect Chain Fixer, Content Powered > Fast Social Share Buttons, and so on.
 
 Each plugin carries the same `class-redirect-chain-fixer-menu.php`. Whichever plugin loads first registers the menu (slug `content-powered`, sumo logo from `assets/content-powered.svg`); the others find it already there and only add their own page. The top-level link opens the first plugin's page. Keep the slug as it is, or plugins made from older copies would end up in a second menu.
+
+## Feedback and bug reports
+
+Every plugin also carries `class-redirect-chain-fixer-feedback.php`, which adds **Submit Feedback** and **Report a Bug** to the bottom of the Content Powered menu. The links appear once however many Content Powered plugins are active: each plugin adds itself to a shared list, and only the newest copy of the class (by its `VERSION` constant, the first loaded on a tie) adds the pages. With more than one plugin active, the form asks which plugin the message is about.
+
+Messages go from the site's server to `https://www.contentpowered.com/wp-json/contentpowered/v1/plugin-feedback/` and show up on contentpowered.com under Our Plugins > Bug Reports and Our Plugins > Feedback. Each message carries a single-use secret, and contentpowered.com fetches its hash back from the site's `admin-ajax.php` to confirm the site really sent it. A site can send one message every 24 hours, and the page shows how long until the next one. The sidebar lists exactly what gets sent.
+
+When you change the file, bump `VERSION` and copy it into the other plugins (with the names swapped), so the newest copy is the one that runs. To send messages to a local copy of contentpowered.com instead, add this to `wp-config.php`:
+
+```php
+define( 'CONTENT_POWERED_FEEDBACK_ENDPOINT', 'http://contentpowered/wp-json/contentpowered/v1/plugin-feedback/' );
+```
 
 ## Credits and licenses
 

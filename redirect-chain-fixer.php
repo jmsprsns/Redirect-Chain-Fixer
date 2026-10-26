@@ -41,6 +41,7 @@ unset( $redirect_chain_fixer_headers );
 require_once REDIRECT_CHAIN_FIXER_DIR . 'includes/class-redirect-chain-fixer-icons.php';
 require_once REDIRECT_CHAIN_FIXER_DIR . 'includes/class-redirect-chain-fixer-updater.php';
 require_once REDIRECT_CHAIN_FIXER_DIR . 'includes/class-redirect-chain-fixer-menu.php';
+require_once REDIRECT_CHAIN_FIXER_DIR . 'includes/class-redirect-chain-fixer-feedback.php';
 require_once REDIRECT_CHAIN_FIXER_DIR . 'includes/class-redirect-chain-fixer-db.php';
 require_once REDIRECT_CHAIN_FIXER_DIR . 'includes/class-redirect-chain-fixer-checker.php';
 require_once REDIRECT_CHAIN_FIXER_DIR . 'includes/class-redirect-chain-fixer-content.php';

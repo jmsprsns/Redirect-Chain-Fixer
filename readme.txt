@@ -32,6 +32,8 @@ Redirect Chain Fixer checks every link in your posts and pages, follows its redi
 
 Find it under Content Powered > Redirect Chain Fixer in the admin menu.
 
+Found a bug or have an idea? Use Content Powered > Report a Bug or Content Powered > Submit Feedback to send it straight to us.
+
 = Credits =
 
 * Icons by [Lucide](https://lucide.dev), used under the ISC License. Icons derived from [Feather](https://feathericons.com) are under the MIT License. The full license text is in `icons/LICENSE`.
